@@ -65,7 +65,10 @@ this.vikingArmy.push(vikingObject)
         this.saxonArmy.push(saxonObject)
     }
 vikingAttack() {
-const randomSaxonIndex = Math.floor(Math.random() * this.saxonArmy.length);
+    const randomVikingIndex = Math.floor(Math.random()* this.vikingArmy.length);
+    const randomViking = this.vikingArmy[randomVikingIndex];
+
+    const randomSaxonIndex = Math.floor(Math.random() * this.saxonArmy.length);
 const randomSaxon = this.saxonArmy[randomSaxonIndex];
 const vikingStrength = randomViking.strength;
 const damageReceived = randomSaxon.receiveDamage(vikingStrength);
@@ -75,8 +78,11 @@ if (randomSaxon.health <= 0) {
 return damageReceived
 } 
 saxonAttack() {
-const randomVikingIndex = Math.floor(Math.random()* this.vikingArmy.length);
-const randomViking = this.vikingArmy[randomVikingIndex];
+    const randomVikingIndex = Math.floor(Math.random()* this.vikingArmy.length);
+    const randomViking = this.vikingArmy[randomVikingIndex];
+
+    const randomSaxonIndex = Math.floor(Math.random() * this.saxonArmy.length);
+const randomSaxon = this.saxonArmy[randomSaxonIndex];
 const saxonStrength = randomSaxon.strength;
 const damageToViking = randomViking.receiveDamage(saxonStrength)
 if(randomViking.health <= 0) {
